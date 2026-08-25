@@ -11,7 +11,7 @@
   height: 80%;
   object-fit: contain;
   object-position: center;
-  opacity: 0.42;
+  opacity: 0.52;
   mix-blend-mode: screen;
   -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 100%);
   mask-image: linear-gradient(to top, black 15%, transparent 100%);
@@ -36,5 +36,5 @@
 
 @media (max-width: 760px) {
   .theme-grid { grid-template-columns: 1fr; }
-  .edition-art { height: 30%; opacity: 0.28; }
+  .edition-art { height: 30%; opacity: 0.34; }
 }
