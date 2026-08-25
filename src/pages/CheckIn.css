@@ -23,3 +23,53 @@
 .checkin-result.is-warning .checkin-result-status { color: var(--red-bright); }
 .checkin-result-name { font-size: 20px; margin: 0 0 4px; }
 .checkin-result-movie { font: 12px var(--mono); color: var(--paper-dark); margin: 0; }
+
+/* html5-qrcode injects its own DOM (buttons, links, file input, dashed
+   dropzone) into #rangam-checkin-scanner — this restyles all of it to
+   match the site instead of default browser chrome. Some rules need
+   !important because the library sets inline styles via JS that would
+   otherwise win. */
+
+.checkin-scanner,
+.checkin-scanner * {
+  font-family: var(--mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.06em !important;
+  color: var(--paper-dark) !important;
+  background-color: transparent !important;
+}
+
+.checkin-scanner img { display: none; }
+
+.checkin-scanner button,
+.checkin-scanner a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 40px !important;
+  padding: 0 16px !important;
+  margin: 8px 4px !important;
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--paper) !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+.checkin-scanner button:hover,
+.checkin-scanner a:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 4px 4px 0 var(--red-bright) !important;
+}
+
+.checkin-scanner select,
+.checkin-scanner input[type="file"] {
+  border: 1px solid var(--line) !important;
+  padding: 6px 10px !important;
+}
+
+.checkin-scanner [style*="dashed"] {
+  border-color: var(--line) !important;
+}

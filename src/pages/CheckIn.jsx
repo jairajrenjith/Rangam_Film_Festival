@@ -12,7 +12,16 @@ export default function CheckIn() {
   const lockRef = useRef(false)
 
   useEffect(() => {
-    const scanner = new Html5QrcodeScanner(SCANNER_ID, { fps: 10, qrbox: 260 }, false)
+    const scanner = new Html5QrcodeScanner(
+      SCANNER_ID,
+      {
+        fps: 10,
+        qrbox: 260,
+        rememberLastUsedCamera: true,
+        experimentalFeatures: { useBarCodeDetectorIfSupported: true },
+      },
+      false
+    )
     scanner.render(handleScan, () => {})
     return () => { scanner.clear().catch(() => {}) }
     // eslint-disable-next-line react-hooks/exhaustive-deps
