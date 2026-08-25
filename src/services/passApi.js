@@ -33,17 +33,3 @@ export async function registerPass(movieId, name, email) {
 
   return response.json()
 }
-
-export async function checkinPass(passId) {
-  const response = await fetch(API_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({ action: 'checkin', passId }),
-  })
-
-  if (!response.ok) {
-    throw new Error('Unable to contact pass server')
-  }
-
-  return response.json()
-}

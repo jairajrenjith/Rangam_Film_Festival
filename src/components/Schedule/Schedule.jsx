@@ -40,7 +40,6 @@ export default function Schedule() {
             <p className="kicker">03 / Events schedule</p>
             <h2 className="display">The <Redact>programme</Redact>.</h2>
           </div>
-          <p className="schedule-legend">ALL DETAILS EDITABLE<br />IN src/data/content.js</p>
         </div>
 
         <div ref={listRef} className="schedule-list reveal">

@@ -54,6 +54,7 @@
 
 .pass-modal-result { display: grid; justify-items: center; gap: 12px; text-align: center; }
 .pass-qr { padding: 16px; background: #17150f; border: 1px solid var(--line); }
+.pass-modal-name { font: 15px var(--sans); color: var(--paper); margin: 0; }
 .pass-modal-id { font: 12px var(--mono); letter-spacing: 0.08em; color: var(--red-bright); margin: 0; }
 
 .ticket-offscreen {

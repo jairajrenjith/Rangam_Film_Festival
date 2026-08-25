@@ -138,6 +138,7 @@ export default function PassModal({ event, onClose, onRegistered }) {
             <div className="pass-qr">
               <QRCodeSVG value={result.qrData} size={168} bgColor="transparent" fgColor="#f3ecdf" />
             </div>
+            <p className="pass-modal-name">{result.name || form.name}</p>
             <p className="pass-modal-id">{result.passId}</p>
             <button className="button primary" onClick={handleDownload} disabled={downloading}>
               {downloading ? 'Preparing…' : 'Download pass'}
