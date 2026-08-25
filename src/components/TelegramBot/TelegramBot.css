@@ -1,0 +1,25 @@
+.bot {
+  position: fixed; z-index: 15; right: 22px; bottom: 22px;
+  display: grid; place-items: center;
+  width: 57px; height: 57px;
+  border: 1px solid var(--paper); border-radius: 50%;
+  background: var(--red); color: var(--paper);
+  font: 20px var(--mono);
+  box-shadow: 4px 4px 0 var(--ink);
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+.bot:hover { transform: translateY(-4px); background: var(--paper); color: var(--red); }
+
+.bot-pulse {
+  position: absolute; inset: -6px;
+  border: 1px solid var(--red-bright); border-radius: 50%;
+  animation: botPulse 2.4s ease-out infinite;
+}
+@keyframes botPulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bot-pulse { animation: none; display: none; }
+}

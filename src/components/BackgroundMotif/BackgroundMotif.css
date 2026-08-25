@@ -1,0 +1,12 @@
+.motif {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  color: rgba(243, 236, 223, 0.06);
+}
+.motif svg { width: 100%; height: 100%; display: block; }
+
+.motif--reel { width: clamp(260px, 34vw, 520px); aspect-ratio: 1; }
+.motif--sprockets { width: 60px; height: 100%; }
+.motif--witness { width: clamp(220px, 26vw, 420px); }
+.motif--frame { width: clamp(260px, 30vw, 460px); aspect-ratio: 1; }

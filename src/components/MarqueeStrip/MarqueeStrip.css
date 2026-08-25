@@ -1,0 +1,30 @@
+.strip {
+  position: relative;
+  overflow: hidden;
+  height: 45px;
+  background: var(--red);
+  color: var(--paper);
+}
+.strip::before, .strip::after {
+  content: "";
+  position: absolute; top: -4.5px; z-index: 1;
+  border: 5px solid transparent;
+}
+.strip::before { left: 0; border-left-color: var(--ink); }
+.strip::after { right: 0; border-right-color: var(--ink); }
+
+.strip-track { display: flex; width: max-content; animation: marquee 60s linear infinite; }
+.strip:hover .strip-track { animation-play-state: paused; }
+.strip-track span {
+  padding-right: 40px;
+  font: 11px var(--mono);
+  letter-spacing: 0.13em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  display: inline-flex; align-items: center; height: 45px;
+}
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .strip-track { animation: none; }
+}

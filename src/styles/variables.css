@@ -1,0 +1,13 @@
+:root {
+  --ink: #0b0b09;
+  --paper: #f3ecdf;
+  --paper-dark: #d9d0c0;
+  --red: #742b2b;
+  --red-bright: #a83232;
+  --line: rgba(243, 236, 223, 0.25);
+  --mono: "JetBrains Mono", monospace;
+  --sans: "Space Grotesk", sans-serif;
+  --malayalam: "Manjari", sans-serif;
+  --pad: clamp(20px, 5vw, 76px);
+  --max: 1240px;
+}

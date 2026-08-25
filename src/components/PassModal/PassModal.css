@@ -1,0 +1,64 @@
+.pass-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(11, 11, 9, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+.pass-modal {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  padding: 32px 28px 28px;
+  background: var(--ink);
+  border: 1px solid var(--line);
+  color: var(--paper);
+}
+
+.pass-modal-close {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 30px; height: 30px;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--paper);
+  cursor: pointer;
+  font-size: 13px;
+}
+.pass-modal-close:hover { border-color: var(--red-bright); color: var(--red-bright); }
+
+.pass-modal-kicker { font: 11px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--red-bright); margin: 0 0 6px; }
+.pass-modal-title { margin: 0 0 18px; font-size: 26px; letter-spacing: -0.04em; }
+
+.pass-modal-note { font: 12px/1.6 var(--mono); color: var(--paper-dark); margin: 0 0 14px; }
+.pass-modal-note--error { color: var(--red-bright); }
+
+.pass-modal-form { display: flex; flex-direction: column; gap: 14px; }
+.pass-modal-form label {
+  display: flex; flex-direction: column; gap: 6px;
+  font: 11px var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--paper-dark);
+}
+.pass-modal-form input {
+  font: 14px var(--sans);
+  padding: 10px 12px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--paper);
+}
+.pass-modal-form input:focus { outline: none; border-color: var(--red-bright); }
+.pass-modal-form button { margin-top: 6px; }
+
+.pass-modal-result { display: grid; justify-items: center; gap: 12px; text-align: center; }
+.pass-qr { padding: 16px; background: #17150f; border: 1px solid var(--line); }
+.pass-modal-id { font: 12px var(--mono); letter-spacing: 0.08em; color: var(--red-bright); margin: 0; }
+
+.ticket-offscreen {
+  position: fixed;
+  top: 0;
+  left: -10000px;
+  pointer-events: none;
+}

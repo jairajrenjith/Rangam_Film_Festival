@@ -1,0 +1,18 @@
+.edition { background: var(--ink); }
+.edition-motif { top: -8%; right: -4%; color: rgba(243, 236, 223, 0.05); }
+.theme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(35px, 9vw, 130px); align-items: start; }
+
+.witness { padding: 25px; border: 1px solid var(--line); font: 13px/1.7 var(--mono); color: var(--paper-dark); transition: border-color 0.3s; }
+.witness:hover { border-color: var(--red-bright); }
+.witness p { margin: 0; }
+
+.stamp {
+  display: inline-block; margin-top: 20px;
+  border: 1px solid var(--red-bright); padding: 7px 9px;
+  color: var(--red-bright); font-size: 10px; letter-spacing: 0.12em;
+  transform: rotate(-4deg);
+  transition: transform 0.3s;
+}
+.witness:hover .stamp { transform: rotate(0deg); }
+
+@media (max-width: 760px) { .theme-grid { grid-template-columns: 1fr; } }
