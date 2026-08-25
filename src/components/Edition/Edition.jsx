@@ -1,5 +1,6 @@
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import Redact from '../Redact/Redact'
+import editionArt from '../../assets/motifs/motif-2.png'
 import './Edition.css'
 
 export default function Edition() {
@@ -7,6 +8,7 @@ export default function Edition() {
 
   return (
     <section className="edition" id="edition">
+      <img className="edition-art" src={editionArt} alt="" aria-hidden="true" />
       <div ref={ref} className="section-inner theme-grid reveal">
         <div>
           <p className="kicker">02 / This edition</p>

@@ -4,6 +4,7 @@ import { EVENTS, PASSES } from '../../data/content'
 import { getMovieStatus } from '../../services/passApi'
 import Redact from '../Redact/Redact'
 import PassModal from '../PassModal/PassModal'
+import scheduleArt from '../../assets/motifs/motif-3.png'
 import './Schedule.css'
 
 export default function Schedule() {
@@ -34,6 +35,7 @@ export default function Schedule() {
 
   return (
     <section className="schedule" id="schedule">
+      <img className="schedule-art" src={scheduleArt} alt="" aria-hidden="true" />
       <div className="section-inner">
         <div ref={headerRef} className="schedule-header reveal">
           <div>

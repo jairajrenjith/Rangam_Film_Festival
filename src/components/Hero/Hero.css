@@ -15,6 +15,22 @@
 }
 .hero-motif { top: 8%; right: -6%; color: rgba(243, 236, 223, 0.06); }
 
+.hero-art {
+  position: absolute;
+  top: 0;
+  right: -2%;
+  width: 62%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 92%);
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 92%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero-inner {
   position: relative; z-index: 1;
   display: flex; flex-direction: column; justify-content: end;
@@ -66,4 +82,9 @@ h1 {
 @media (max-width: 760px) {
   .hero { padding-top: 120px; }
   .film-number { right: -20px; }
+  .hero-art {
+    width: 100%; right: -15%; opacity: 0.3;
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 78%);
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 78%);
+  }
 }

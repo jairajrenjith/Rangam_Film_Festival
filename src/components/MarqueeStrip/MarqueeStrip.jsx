@@ -8,6 +8,14 @@ export default function MarqueeStrip() {
       <div className="strip-track">
         <span>{TEXT}</span>
         <span>{TEXT}</span>
+        <span>{TEXT}</span>
+        <span>{TEXT}</span>
+        <span>{TEXT}</span>
+        <span>{TEXT}</span>
+        <span>{TEXT}</span>
+        <span>{TEXT}</span>
+        <span>{TEXT}</span>
+        <span>{TEXT}</span>
       </div>
     </div>
   )
