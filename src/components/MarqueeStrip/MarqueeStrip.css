@@ -28,3 +28,6 @@
 @media (prefers-reduced-motion: reduce) {
   .strip-track { animation: none; }
 }
+
+.strip--notch-light::before { border-left-color: var(--paper); }
+.strip--notch-light::after { border-right-color: var(--paper); }

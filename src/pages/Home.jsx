@@ -28,8 +28,14 @@ export default function Home() {
         <Hero ready={!loading} />
         <MarqueeStrip />
         <About />
+        <MarqueeStrip
+          text="Rangam · a temporary archive, made together · held in common, carried forward · "
+          notch="light"
+        />
         <Edition />
+        <MarqueeStrip text="Rangam · reserve your seat · limited passes per screening · witness / record / remember · " />
         <Schedule />
+        <MarqueeStrip text="Rangam · films return to us · so does the memory of them · cet film society · " />
         <Archive />
       </main>
       <Footer />
