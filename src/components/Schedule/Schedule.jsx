@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
-import { EVENTS, PASSES } from '../../data/content'
+import { EVENTS } from '../../data/content'
 import { getMovieStatus } from '../../services/passApi'
 import Redact from '../Redact/Redact'
 import PassModal from '../PassModal/PassModal'
@@ -10,7 +10,6 @@ import './Schedule.css'
 export default function Schedule() {
   const headerRef = useScrollReveal()
   const listRef = useScrollReveal()
-  const passRef = useScrollReveal()
 
   const [statuses, setStatuses] = useState({})
   const [activeMovieId, setActiveMovieId] = useState(null)
@@ -68,21 +67,6 @@ export default function Schedule() {
               </article>
             )
           })}
-        </div>
-
-        <div ref={passRef} className="pass-grid reveal">
-          {PASSES.map((p) => (
-            <article className="pass" key={p.tier}>
-              <h3>{p.tier}</h3>
-              <div className="price">{p.price}</div>
-              <ul>
-                {p.perks.map((perk) => (
-                  <li key={perk}>{perk}</li>
-                ))}
-              </ul>
-              <a className="button" href={p.url}>Pass details →</a>
-            </article>
-          ))}
         </div>
       </div>
 
