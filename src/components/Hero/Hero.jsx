@@ -1,13 +1,16 @@
 import './Hero.css'
 import heroArt from '../../assets/motifs/motif-1.png'
+import rangamMark from '../../assets/logos/logo_rangam.png'
 
 export default function Hero({ ready }) {
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
       <img className="hero-art" src={heroArt} alt="" aria-hidden="true" />
       <div className={`hero-inner ${ready ? 'is-ready' : ''}`}>
-        <p className="archive-tag hero-line">CET Film Society presents / annual film festival</p>
-        <h1 id="hero-title" className="hero-line">Rangam</h1>
+        <p className="hero-presents hero-line">CET Film Society in association with Dhwani&apos;26 presents</p>
+        <h1 id="hero-title" className="hero-mark-wrap hero-line">
+          <img className="hero-mark" src={rangamMark} alt="Rangam" />
+        </h1>
         <p className="mal-title hero-line">സാക്ഷിപകർപ്പുകൾ</p>
         <p className="subtitle hero-line">Whispers of Witness</p>
         <p className="hero-note hero-line">

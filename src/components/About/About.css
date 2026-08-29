@@ -1,6 +1,6 @@
 .about { background: var(--paper); color: var(--ink); }
-.about-motif { bottom: -8%; left: -6%; color: rgba(11, 11, 9, 0.06); }
+.about-motif { bottom: -8%; left: -6%; color: rgba(var(--ink-rgb), 0.06); }
 .about-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: clamp(40px, 10vw, 150px); align-items: end; }
-.about-aside { border-left: 2px solid var(--red); padding-left: 25px; font: 13px/1.7 var(--mono); color: #5c554c; }
+.about-aside { border-left: 2px solid var(--red); padding-left: 25px; font: 13px/1.7 var(--mono); color: var(--muted); }
 
 @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }

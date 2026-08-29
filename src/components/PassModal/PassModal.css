@@ -5,7 +5,7 @@
   display: grid;
   place-items: center;
   padding: 20px;
-  background: rgba(11, 11, 9, 0.82);
+  background: rgba(var(--ink-deep-rgb), 0.82);
   backdrop-filter: blur(6px);
 }
 
@@ -53,7 +53,7 @@
 .pass-modal-form button { margin-top: 6px; }
 
 .pass-modal-result { display: grid; justify-items: center; gap: 12px; text-align: center; }
-.pass-qr { padding: 16px; background: #17150f; border: 1px solid var(--line); }
+.pass-qr { padding: 16px; background: var(--ink-deep); border: 1px solid var(--line); }
 .pass-modal-name { font: 15px var(--sans); color: var(--paper); margin: 0; }
 .pass-modal-id { font: 12px var(--mono); letter-spacing: 0.08em; color: var(--red-bright); margin: 0; }
 

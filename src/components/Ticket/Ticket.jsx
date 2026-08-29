@@ -1,8 +1,8 @@
 import { forwardRef } from 'react'
 import { QRCodeCanvas } from 'qrcode.react'
-import cetLogo from '../../assets/logos/logo_cet.jpg'
-import rangamLogo from '../../assets/logos/logo_rangam.jpg'
-import cetfsLogo from '../../assets/logos/logo_cetfs.jpg'
+import cetLogo from '../../assets/logos/logo_cet.png'
+import rangamLogo from '../../assets/logos/logo_rangam.png'
+import cetfsLogo from '../../assets/logos/logo_cetfs.png'
 import './Ticket.css'
 
 const Ticket = forwardRef(function Ticket(
@@ -37,7 +37,7 @@ const Ticket = forwardRef(function Ticket(
 
       <div className="ticket-stub">
         <div className="ticket-stub-qr">
-          <QRCodeCanvas value={qrData} size={104} bgColor="#f3ecdf" fgColor="#0b0b09" includeMargin />
+          <QRCodeCanvas value={qrData} size={104} bgColor="#ffec8e" fgColor="#631d3f" includeMargin />
         </div>
         <p className="ticket-stub-id">{passId}</p>
         <p className="ticket-stub-label">RANGAM · 2026</p>

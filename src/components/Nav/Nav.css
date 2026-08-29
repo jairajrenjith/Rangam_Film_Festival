@@ -4,46 +4,72 @@
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-  padding: 20px var(--pad);
+  justify-content: center;
+  gap: clamp(16px, 3vw, 32px);
+  padding: 16px var(--pad);
   border-bottom: 1px solid transparent;
-  transition: background 0.25s ease, border-color 0.25s ease, padding 0.25s ease;
+  background: linear-gradient(to bottom, rgba(var(--ink-rgb), 0.55), transparent);
+  transition: background 0.25s ease, border-color 0.25s ease, padding 0.25s ease, gap 0.25s ease;
 }
+
+/* Scrolled: the side logos step away entirely (they already live in the
+   hero) — only the link pill remains, floating on its own, sized up a
+   touch so it stays easy to spot without the rest of the bar. */
 .nav.scrolled {
-  background: rgba(11, 11, 9, 0.92);
-  backdrop-filter: blur(14px);
+  background: transparent;
+  border-color: transparent;
+  padding-block: 14px;
+}
+.nav.scrolled .nav-side { display: none; }
+.nav.scrolled .nav-pill {
+  padding: 12px 26px;
+  font-size: 13px;
+  background: rgba(var(--ink-deep-rgb), 0.82);
   border-color: var(--line);
-  padding-block: 13px;
+  backdrop-filter: blur(14px);
 }
 
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.04em; }
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 34px; height: 34px;
-  border: 2px solid var(--paper);
-  border-radius: 50%;
-  overflow: hidden;
-  background: var(--paper);
-  transition: transform 0.4s ease;
+/* Side brands — CET Film Society (left) / Dhwani (right). Plain logos,
+   no chip/box — kept close to the pill so the whole row (logo → links
+   → logo) reads as one aligned group. */
+.nav-side { display: flex; align-items: center; transition: transform 0.3s ease; }
+.nav-side img {
+  height: 54px;
+  width: auto;
+  object-fit: contain;
 }
-.brand-mark img { width: 78%; height: 78%; object-fit: contain; }
-.brand:hover .brand-mark { transform: rotate(180deg); }
-.micro { font: 10px var(--mono); letter-spacing: 0.1em; color: rgba(243, 236, 223, 0.64); text-transform: uppercase; }
+.nav-side:hover { transform: scale(1.06); }
 
-.nav-links { display: flex; align-items: center; gap: clamp(12px, 2vw, 28px); font-size: 13px; }
-.nav-links a { position: relative; opacity: 0.75; padding-bottom: 2px; transition: opacity 0.2s; }
-.nav-links a::after {
+/* Center — the pill of links */
+.nav-center { display: flex; align-items: center; max-width: 100%; }
+
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.6vw, 22px);
+  padding: 9px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(var(--ink-deep-rgb), 0.55);
+  backdrop-filter: blur(6px);
+  font-size: 12px;
+  white-space: nowrap;
+  transition: padding 0.25s ease, font-size 0.25s ease, background 0.25s ease;
+}
+.nav-pill a { position: relative; opacity: 0.78; padding-bottom: 2px; transition: opacity 0.2s; }
+.nav-pill a::after {
   content: "";
   position: absolute;
-  left: 0; right: 100%; bottom: -2px;
+  left: 0; right: 100%; bottom: -3px;
   height: 1px;
   background: var(--red-bright);
   transition: right 0.25s ease;
 }
-.nav-links a:hover { opacity: 1; color: var(--red-bright); }
-.nav-links a:hover::after { right: 0; }
+.nav-pill a:hover { opacity: 1; color: var(--red-bright); }
+.nav-pill a:hover::after { right: 0; }
+
+/* Mobile dropdown links (duplicate of nav-pill content, hidden by default) */
+.nav-links { display: none; }
 
 .menu { display: none; background: none; border: 0; padding: 6px; cursor: pointer; }
 .menu-icon, .menu-icon::before, .menu-icon::after {
@@ -57,16 +83,31 @@
 .menu-icon.is-open::before { transform: translateY(6px) rotate(45deg); }
 .menu-icon.is-open::after { transform: translateY(-4px) rotate(-45deg); }
 
-@media (max-width: 760px) {
-  .nav-links { display: none; }
-  .menu { display: block; }
+@media (max-width: 860px) {
+  .nav {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    justify-content: initial;
+    padding-block: 12px;
+  }
+  .nav-pill { display: none; }
+  .nav-center { justify-self: start; }
+  .nav-side--right { grid-column: 3; justify-self: end; }
+  .menu { display: block; grid-column: 4; justify-self: end; }
+  .nav.scrolled .nav-side { display: flex; }
+  .nav.scrolled .nav-side img { height: 38px; }
+
   .nav.open .nav-links {
-    position: absolute; top: 64px; left: 0; right: 0;
+    position: absolute; top: 100%; left: 0; right: 0;
+    z-index: 5;
     display: flex; flex-direction: column; align-items: stretch;
-    padding: 20px var(--pad);
-    background: var(--ink);
+    padding: 18px var(--pad) 22px;
+    background: rgba(var(--ink-rgb), 0.97);
     border-bottom: 1px solid var(--line);
   }
-  .nav.open .nav-links a { padding: 10px 0; }
-  .nav.open .nav-links a::after { display: none; }
+  .nav.open .nav-links a { padding: 10px 0; font-size: 14px; }
+}
+
+@media (max-width: 460px) {
+  .nav-side img { height: 38px; }
 }

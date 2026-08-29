@@ -17,12 +17,12 @@
 
 .ticket-meta { display: flex; gap: 40px; margin-bottom: 26px; }
 .ticket-meta div { font-size: 15px; }
-.ticket-meta span { display: block; font: 10px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: #8a8072; margin-bottom: 6px; }
+.ticket-meta span { display: block; font: 10px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
 
 .ticket-holder { font-size: 16px; margin-bottom: 30px; }
-.ticket-holder span { display: block; font: 10px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: #8a8072; margin-bottom: 6px; }
+.ticket-holder span { display: block; font: 10px var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
 
-.ticket-footer { position: absolute; left: 44px; bottom: 24px; font: 10px var(--mono); letter-spacing: 0.1em; color: #8a8072; margin: 0; }
+.ticket-footer { position: absolute; left: 44px; bottom: 24px; font: 10px var(--mono); letter-spacing: 0.1em; color: var(--muted); margin: 0; }
 
 .ticket-stub {
   width: 220px;
@@ -31,8 +31,8 @@
   color: var(--paper);
   padding: 30px 20px;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
-  border-left: 2px dashed rgba(243, 236, 223, 0.3);
+  border-left: 2px dashed rgba(var(--paper-rgb), 0.3);
 }
-.ticket-stub-qr { padding: 10px; background: #f3ecdf; }
+.ticket-stub-qr { padding: 10px; background: var(--paper); }
 .ticket-stub-id { font: 11px var(--mono); letter-spacing: 0.06em; color: var(--red-bright); margin: 0; text-align: center; }
 .ticket-stub-label { font: 10px var(--mono); letter-spacing: 0.2em; color: var(--paper-dark); margin: 0; }

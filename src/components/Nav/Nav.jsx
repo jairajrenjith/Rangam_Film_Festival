@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { NAV_LINKS } from '../../data/content'
 import { useNavScroll } from '../../hooks/useNavScroll'
-import rangamMark from '../../assets/logos/logo_rangam.jpg'
+import cetfsMark from '../../assets/logos/logo_cetfs.png'
+import dhwaniMark from '../../assets/logos/logo_dhwani.png'
 import './Nav.css'
 
 export default function Nav() {
@@ -10,15 +11,22 @@ export default function Nav() {
 
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''} ${open ? 'open' : ''}`} aria-label="Primary navigation">
-      <a className="brand" href="#top" onClick={() => setOpen(false)}>
-        <span className="brand-mark">
-          <img src={rangamMark} alt="Rangam" />
-        </span>
-        <span>
-          RANGAM
-          <br />
-          <span className="micro">CET Film Society</span>
-        </span>
+      <a className="nav-side nav-side--left" href="#top" onClick={() => setOpen(false)} aria-label="CET Film Society, home">
+        <img src={cetfsMark} alt="CET Film Society" />
+      </a>
+
+      <div className="nav-center">
+        <div className="nav-pill">
+          {NAV_LINKS.map((link) => (
+            <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <a className="nav-side nav-side--right" href="https://dhwani.cet.ac.in" target="_blank" rel="noreferrer" aria-label="Dhwani">
+        <img src={dhwaniMark} alt="Dhwani" />
       </a>
 
       <button

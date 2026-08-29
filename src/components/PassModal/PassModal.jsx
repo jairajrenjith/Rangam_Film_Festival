@@ -64,7 +64,7 @@ export default function PassModal({ event, onClose, onRegistered }) {
     if (!ticketRef.current) return
     setDownloading(true)
     try {
-      const canvas = await html2canvas(ticketRef.current, { backgroundColor: '#f3ecdf', scale: 2 })
+      const canvas = await html2canvas(ticketRef.current, { backgroundColor: '#ffec8e', scale: 2 })
       const link = document.createElement('a')
       link.download = `rangam-pass-${result.passId}.png`
       link.href = canvas.toDataURL('image/png')
@@ -136,7 +136,7 @@ export default function PassModal({ event, onClose, onRegistered }) {
               <p className="pass-modal-note">You already had a pass for this screening — here it is again.</p>
             )}
             <div className="pass-qr">
-              <QRCodeSVG value={result.qrData} size={168} bgColor="transparent" fgColor="#f3ecdf" />
+              <QRCodeSVG value={result.qrData} size={168} bgColor="transparent" fgColor="#ffec8e" />
             </div>
             <p className="pass-modal-name">{result.name || form.name}</p>
             <p className="pass-modal-id">{result.passId}</p>

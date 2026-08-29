@@ -1,5 +1,5 @@
 .edition { background: var(--ink); }
-.edition-motif { top: -8%; right: -4%; color: rgba(243, 236, 223, 0.05); }
+.edition-motif { top: -8%; right: -4%; color: rgba(var(--paper-rgb), 0.05); }
 
 .edition-art {
   position: absolute;

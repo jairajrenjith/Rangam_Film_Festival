@@ -1,4 +1,4 @@
-.schedule { background: #171512; }
+.schedule { background: var(--ink-deep); }
 
 .schedule-art {
   position: absolute;
@@ -26,7 +26,7 @@
   border-bottom: 1px solid var(--line);
   transition: padding 0.2s, background 0.2s;
 }
-.event:hover { padding-inline: 15px; background: rgba(116, 43, 43, 0.2); }
+.event:hover { padding-inline: 15px; background: rgba(var(--red-rgb), 0.2); }
 .event-id, .event-meta { font: 11px var(--mono); color: var(--paper-dark); }
 .event-film { font-size: clamp(1.25rem, 2.3vw, 2rem); letter-spacing: -0.05em; }
 .event-date { font-size: 12px; line-height: 1.6; }
