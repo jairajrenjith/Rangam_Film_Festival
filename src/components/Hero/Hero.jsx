@@ -1,9 +1,11 @@
 import './Hero.css'
+import HeroBalls from './HeroBalls'
 import rangamMark from '../../assets/logos/logo_rangam.png'
 
 export default function Hero({ ready }) {
   return (
-    <section className="hero" id="top" aria-labelledby="hero-title">
+    <section className="hero" id="top" aria-labelledby="hero-title" data-cursor-theme="butter">
+      <HeroBalls />
       <div className={`hero-inner ${ready ? 'is-ready' : ''}`}>
         <p className="hero-presents hero-line">CET Film Society in association with Dhwani&apos;26 presents</p>
         <h1 id="hero-title" className="hero-mark-wrap hero-line">

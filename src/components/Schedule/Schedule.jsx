@@ -33,7 +33,7 @@ export default function Schedule() {
   const activeEvent = EVENTS.find((e) => e.movieId === activeMovieId)
 
   return (
-    <section className="schedule" id="schedule">
+    <section className="schedule" id="schedule" data-cursor-theme="plum">
       <img className="schedule-art" src={scheduleArt} alt="" aria-hidden="true" />
       <div className="section-inner">
         <div ref={headerRef} className="schedule-header reveal">

@@ -1,0 +1,118 @@
+/* Rangam's cursor swaps colour against the section it's over — plum on
+   the butter half of the palette, butter on the plum half — and leaves a
+   short-lived glow behind it as it moves. Touch devices skip the pointer
+   entirely and just get the glow, dropped wherever a finger lands. */
+
+.cfx-dot,
+.cfx-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transition: opacity 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  will-change: transform;
+}
+
+.cfx-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+}
+
+.cfx-ring {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1.5px solid transparent;
+  transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease,
+    opacity 0.2s ease, background 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Theme colours: the class name is the colour of the section beneath the
+   cursor, so the cursor itself always wears the opposite one. */
+.cfx-theme-butter.cfx-dot { background: var(--ink); box-shadow: 0 0 12px rgba(var(--ink-rgb), 0.55); }
+.cfx-theme-butter.cfx-ring { border-color: var(--ink); box-shadow: 0 0 18px rgba(var(--ink-rgb), 0.28); }
+
+.cfx-theme-plum.cfx-dot { background: var(--paper); box-shadow: 0 0 12px rgba(var(--paper-rgb), 0.6); }
+.cfx-theme-plum.cfx-ring { border-color: var(--paper); box-shadow: 0 0 18px rgba(var(--paper-rgb), 0.32); }
+
+.cfx-ring.is-hovering {
+  width: 54px;
+  height: 54px;
+  margin: -27px 0 0 -27px;
+  border-width: 2px;
+}
+
+.cfx-ring.is-pressed {
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+}
+
+/* The glow trail: a small pool of nodes reused as the pointer/finger moves,
+   each one blooming outward and fading rather than sitting static. */
+.cfx-spark-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+}
+
+.cfx-spark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border-radius: 50%;
+  opacity: 0;
+  filter: blur(2px);
+}
+
+.cfx-spark--touch {
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+}
+
+.cfx-spark.cfx-theme-butter {
+  background: radial-gradient(circle, rgba(var(--ink-rgb), 0.55) 0%, rgba(var(--ink-rgb), 0) 72%);
+  mix-blend-mode: multiply;
+}
+
+.cfx-spark.cfx-theme-plum {
+  background: radial-gradient(circle, rgba(var(--paper-rgb), 0.6) 0%, rgba(var(--paper-rgb), 0) 72%);
+  mix-blend-mode: screen;
+}
+
+.cfx-spark.is-active {
+  animation: cfxSparkFade 0.65s ease-out forwards;
+}
+
+@keyframes cfxSparkFade {
+  0% { opacity: 0.85; transform: scale(0.35); }
+  100% { opacity: 0; transform: scale(1.7); }
+}
+
+/* Only hide the native pointer once CursorFX is actually running (fine
+   pointer, JS enabled) — touch devices never get this class, so their
+   normal touch behaviour is untouched. Text fields keep a real caret. */
+html.cfx-active,
+html.cfx-active * {
+  cursor: none !important;
+}
+
+html.cfx-active input,
+html.cfx-active textarea,
+html.cfx-active [contenteditable='true'] {
+  cursor: text !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cfx-spark { display: none; }
+}

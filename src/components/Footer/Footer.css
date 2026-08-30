@@ -7,6 +7,21 @@
     radial-gradient(ellipse 70% 60% at 92% -8%, rgba(var(--paper-rgb), 0.24), transparent 55%),
     radial-gradient(ellipse 60% 55% at -2% 108%, rgba(var(--ink-deep-rgb), 0.55), transparent 62%),
     linear-gradient(150deg, var(--red) 0%, var(--ink-deep) 120%);
+  background-size: 150% 150%;
+  animation: footerGradientDrift 28s ease-in-out infinite alternate;
+}
+
+@keyframes footerGradientDrift {
+  0% { background-position: 10% 90%; }
+  50% { background-position: 65% 35%; }
+  100% { background-position: 90% 10%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer {
+    animation: none;
+    background-size: 100% 100%;
+  }
 }
 .footer-inner { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 32px; max-width: var(--max); margin: auto; }
 .footer-title { font-size: clamp(2.5rem, 5vw, 5rem); line-height: 0.84; letter-spacing: -0.09em; }

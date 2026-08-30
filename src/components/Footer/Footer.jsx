@@ -2,7 +2,7 @@ import './Footer.css'
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" data-cursor-theme="plum">
       <div className="footer-inner">
         <div>
           <div className="micro">A project by</div>

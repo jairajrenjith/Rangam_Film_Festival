@@ -11,7 +11,7 @@ const Ticket = forwardRef(function Ticket(
   ref
 ) {
   return (
-    <div className="ticket" ref={ref}>
+    <div className="ticket" data-cursor-theme="butter" ref={ref}>
       <div className="ticket-main">
         <div className="ticket-brands">
           <img src={cetLogo} alt="" className="ticket-brand" />

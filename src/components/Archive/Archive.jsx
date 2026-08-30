@@ -7,12 +7,12 @@ export default function Archive() {
   const ref = useScrollReveal()
 
   return (
-    <section className="previous" id="archive">
+    <section className="previous" id="archive" data-cursor-theme="butter">
       <div ref={ref} className="section-inner reveal">
         <p className="kicker">04 / Previous editions</p>
         <h2 className="display">More than a festival, a shared <Redact>memory</Redact>.</h2>
         <div className="previous-grid">
-          <div className="archive-frame">
+          <div className="archive-frame" data-cursor-theme="plum">
             <strong>Footage from past Rangams<br />is being restored.</strong>
           </div>
           <div className="highlight-list">

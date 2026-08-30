@@ -7,7 +7,7 @@ export default function About() {
   const ref = useScrollReveal()
 
   return (
-    <section className="about" id="rangam">
+    <section className="about" id="rangam" data-cursor-theme="plum">
       <img className="about-art" src={aboutArt} alt="" aria-hidden="true" />
       <div ref={ref} className="section-inner about-grid reveal">
         <div>

@@ -10,7 +10,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav className={`nav ${scrolled ? 'scrolled' : ''} ${open ? 'open' : ''}`} aria-label="Primary navigation">
+    <nav className={`nav ${scrolled ? 'scrolled' : ''} ${open ? 'open' : ''}`} data-cursor-theme="plum" aria-label="Primary navigation">
       <a className="nav-side nav-side--left" href="#top" onClick={() => setOpen(false)} aria-label="CET Film Society, home">
         <img src={cetfsMark} alt="CET Film Society" />
       </a>

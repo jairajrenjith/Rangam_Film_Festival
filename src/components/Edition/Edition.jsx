@@ -7,7 +7,7 @@ export default function Edition() {
   const ref = useScrollReveal()
 
   return (
-    <section className="edition" id="edition">
+    <section className="edition" id="edition" data-cursor-theme="plum">
       <img className="edition-art" src={editionArt} alt="" aria-hidden="true" />
       <div ref={ref} className="section-inner theme-grid reveal">
         <div>

@@ -4,7 +4,7 @@ const DEFAULT_TEXT = 'Rangam Â· cinema as historical memory against oppression Â
 
 export default function MarqueeStrip({ text = DEFAULT_TEXT, notch = 'dark' }) {
   return (
-    <div className={`strip${notch === 'light' ? ' strip--notch-light' : ''}`} aria-hidden="true">
+    <div className={`strip${notch === 'light' ? ' strip--notch-light' : ''}`} data-cursor-theme="plum" aria-hidden="true">
       <div className="strip-track">
         <span>{text}</span>
         <span>{text}</span>
