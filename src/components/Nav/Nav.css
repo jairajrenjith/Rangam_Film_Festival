@@ -104,8 +104,7 @@
   .nav-center { justify-self: start; }
   .nav-side--right { grid-column: 3; justify-self: end; }
   .menu { display: block; grid-column: 4; justify-self: end; }
-  .nav.scrolled .nav-side { display: flex; }
-  .nav.scrolled .nav-side img { height: 38px; }
+  .nav.scrolled .nav-side { display: none; }
 
   .nav.open .nav-links {
     position: absolute; top: 100%; left: 0; right: 0;
