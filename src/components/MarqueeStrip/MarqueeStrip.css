@@ -5,6 +5,10 @@
   background: var(--red);
   color: var(--paper);
 }
+.strip--inverted {
+  background: var(--paper);
+  color: var(--ink);
+}
 .strip::before, .strip::after {
   content: "";
   position: absolute; top: -4.5px; z-index: 1;

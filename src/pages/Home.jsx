@@ -31,9 +31,10 @@ export default function Home() {
         <MarqueeStrip
           text="Rangam · a temporary archive, made together · held in common, carried forward · "
           notch="light"
+          inverted
         />
         <Edition />
-        <MarqueeStrip text="Rangam · reserve your seat · limited passes per screening · witness / record / remember · " />
+        <MarqueeStrip text="Rangam · reserve your seat · limited passes per screening · witness / record / remember · " inverted />
         <Schedule />
         <MarqueeStrip text="Rangam · films return to us · so does the memory of them · cet film society · " />
         <Archive />
