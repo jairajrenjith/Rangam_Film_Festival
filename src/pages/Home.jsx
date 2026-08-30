@@ -9,7 +9,7 @@ import Edition from '../components/Edition/Edition'
 import Schedule from '../components/Schedule/Schedule'
 import Archive from '../components/Archive/Archive'
 import Footer from '../components/Footer/Footer'
-import TelegramBot from '../components/TelegramBot/TelegramBot'
+import RangamBot from '../components/RangamBot/RangamBot'
 
 export default function Home() {
   const [loading, setLoading] = useState(true)
@@ -39,7 +39,7 @@ export default function Home() {
         <Archive />
       </main>
       <Footer />
-      <TelegramBot />
+      <RangamBot />
     </>
   )
 }
