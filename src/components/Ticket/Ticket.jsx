@@ -3,6 +3,7 @@ import { QRCodeCanvas } from 'qrcode.react'
 import cetLogo from '../../assets/logos/logo_cet.png'
 import rangamLogo from '../../assets/logos/logo_rangam.png'
 import cetfsLogo from '../../assets/logos/logo_cetfs.png'
+import dhwaniLogo from '../../assets/logos/logo_dhwani.png'
 import './Ticket.css'
 
 const Ticket = forwardRef(function Ticket(
@@ -16,6 +17,7 @@ const Ticket = forwardRef(function Ticket(
           <img src={cetLogo} alt="" className="ticket-brand" />
           <img src={rangamLogo} alt="" className="ticket-brand ticket-brand--rangam" />
           <img src={cetfsLogo} alt="" className="ticket-brand" />
+          <img src={dhwaniLogo} alt="" className="ticket-brand ticket-brand--dhwani" />
         </div>
 
         <p className="ticket-kicker">Admit one · Screening pass</p>

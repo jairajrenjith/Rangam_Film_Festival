@@ -1,8 +1,18 @@
-.footer { padding: 55px var(--pad) 25px; background: var(--red); color: var(--paper); }
-.footer-inner { display: flex; justify-content: space-between; gap: 32px; max-width: var(--max); margin: auto; }
+.footer {
+  position: relative;
+  overflow: hidden;
+  padding: 55px var(--pad) 25px;
+  color: var(--paper);
+  background:
+    radial-gradient(ellipse 70% 60% at 92% -8%, rgba(var(--paper-rgb), 0.24), transparent 55%),
+    radial-gradient(ellipse 60% 55% at -2% 108%, rgba(var(--ink-deep-rgb), 0.55), transparent 62%),
+    linear-gradient(150deg, var(--red) 0%, var(--ink-deep) 120%);
+}
+.footer-inner { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 32px; max-width: var(--max); margin: auto; }
 .footer-title { font-size: clamp(2.5rem, 5vw, 5rem); line-height: 0.84; letter-spacing: -0.09em; }
 .footer-note { max-width: 310px; font: 12px/1.7 var(--mono); }
 .footer-bottom {
+  position: relative; z-index: 1;
   display: flex; justify-content: space-between; gap: 10px;
   max-width: var(--max); margin: 70px auto 0; padding-top: 16px;
   border-top: 1px solid rgba(var(--paper-rgb), 0.35);

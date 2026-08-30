@@ -1,5 +1,10 @@
 .schedule { background: var(--ink-deep); }
 
+/* The shared .kicker defaults to plum text (for the light sections) —
+   on this dark plum background that's nearly invisible, so switch it
+   to butter here for real contrast. */
+.schedule .kicker { color: var(--paper); }
+
 .schedule-art {
   position: absolute;
   inset: 0;
@@ -40,8 +45,20 @@
 .pass-btn:hover { box-shadow: 4px 4px 0 var(--red-bright); }
 
 @media (max-width: 760px) {
-  .event { grid-template-columns: 42px 1fr; gap: 8px 14px; }
-  .event-meta { grid-column: 2; }
-  .event-venue { display: none; }
-  .event-pass { grid-column: 1 / -1; justify-content: flex-start; margin-top: 6px; }
+  .schedule-header { align-items: start; flex-direction: column; gap: 10px; margin-bottom: 30px; }
+
+  .event {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 20px 2px;
+  }
+  .event:hover { padding-inline: 2px; background: none; }
+  .event-id { order: -1; }
+  .event-film { font-size: clamp(1.2rem, 5.5vw, 1.6rem); line-height: 1.2; }
+  .event-meta.event-date { line-height: 1.5; }
+  .event-venue { display: block; }
+  .event-pass { width: 100%; justify-content: flex-start; margin-top: 6px; }
+  .pass-btn { width: 100%; min-height: 46px; }
 }

@@ -71,17 +71,27 @@
 /* Mobile dropdown links (duplicate of nav-pill content, hidden by default) */
 .nav-links { display: none; }
 
-.menu { display: none; background: none; border: 0; padding: 6px; cursor: pointer; }
-.menu-icon, .menu-icon::before, .menu-icon::after {
-  display: block; width: 20px; height: 2px; background: var(--paper);
-  transition: transform 0.25s ease, opacity 0.25s ease;
+.menu { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.menu-icon {
+  position: relative;
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--paper);
+  transition: background 0.2s ease;
 }
-.menu-icon::before, .menu-icon::after { content: ""; position: relative; }
-.menu-icon::before { top: -6px; }
-.menu-icon::after { top: 4px; }
+.menu-icon::before, .menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px; height: 2px;
+  background: var(--paper);
+  transition: transform 0.28s ease, top 0.28s ease;
+}
+.menu-icon::before { top: -7px; }
+.menu-icon::after { top: 7px; }
 .menu-icon.is-open { background: transparent; }
-.menu-icon.is-open::before { transform: translateY(6px) rotate(45deg); }
-.menu-icon.is-open::after { transform: translateY(-4px) rotate(-45deg); }
+.menu-icon.is-open::before { top: 0; transform: rotate(45deg); }
+.menu-icon.is-open::after { top: 0; transform: rotate(-45deg); }
 
 @media (max-width: 860px) {
   .nav {

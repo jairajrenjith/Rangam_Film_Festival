@@ -1,6 +1,11 @@
 .edition { background: var(--ink); }
 .edition-motif { top: -8%; right: -4%; color: rgba(var(--paper-rgb), 0.05); }
 
+/* The shared .kicker defaults to plum text (for the light sections) —
+   on this dark plum background that's nearly invisible, so switch it
+   to butter here for real contrast. */
+.edition .kicker { color: var(--paper); }
+
 .edition-art {
   position: absolute;
   left: -4%;

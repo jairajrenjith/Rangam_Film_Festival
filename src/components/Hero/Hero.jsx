@@ -1,11 +1,9 @@
 import './Hero.css'
-import heroArt from '../../assets/motifs/motif-1.png'
 import rangamMark from '../../assets/logos/logo_rangam.png'
 
 export default function Hero({ ready }) {
   return (
     <section className="hero" id="top" aria-labelledby="hero-title">
-      <img className="hero-art" src={heroArt} alt="" aria-hidden="true" />
       <div className={`hero-inner ${ready ? 'is-ready' : ''}`}>
         <p className="hero-presents hero-line">CET Film Society in association with Dhwani&apos;26 presents</p>
         <h1 id="hero-title" className="hero-mark-wrap hero-line">
@@ -21,7 +19,6 @@ export default function Hero({ ready }) {
           <a className="button" href="#edition">Read this year's note</a>
         </div>
       </div>
-      <div className="film-number" aria-hidden="true">26</div>
     </section>
   )
 }

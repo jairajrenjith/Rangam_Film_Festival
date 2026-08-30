@@ -10,6 +10,7 @@
   --red: #9c2f56;
   --red-rgb: 156, 47, 86;
   --red-bright: #d1487a;
+  --red-bright-rgb: 209, 72, 122;
   --muted: #7a4356; /* muted text for use on light/paper backgrounds */
   --line: rgba(var(--paper-rgb), 0.25);
   --mono: "JetBrains Mono", monospace;

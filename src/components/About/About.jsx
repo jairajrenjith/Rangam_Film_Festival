@@ -1,5 +1,6 @@
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import Redact from '../Redact/Redact'
+import aboutArt from '../../assets/motifs/motif-1.png'
 import './About.css'
 
 export default function About() {
@@ -7,6 +8,7 @@ export default function About() {
 
   return (
     <section className="about" id="rangam">
+      <img className="about-art" src={aboutArt} alt="" aria-hidden="true" />
       <div ref={ref} className="section-inner about-grid reveal">
         <div>
           <p className="kicker">01 / This is Rangam</p>

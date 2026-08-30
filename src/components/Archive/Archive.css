@@ -1,5 +1,12 @@
-.previous { background: var(--paper); color: var(--ink); }
-.archive-motif { bottom: -10%; right: -6%; color: rgba(var(--ink-rgb), 0.05); }
+.previous {
+  position: relative;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse 50% 55% at 96% 100%, rgba(var(--red-rgb), 0.32), transparent 60%),
+    radial-gradient(ellipse 45% 40% at 2% 0%, rgba(255, 255, 255, 0.3), transparent 55%),
+    radial-gradient(ellipse 50% 48% at -4% 100%, rgba(var(--ink-rgb), 0.2), transparent 62%),
+    linear-gradient(195deg, var(--paper) 0%, var(--paper-dark) 82%, var(--paper) 100%);
+}
 .previous-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; margin-top: 48px; }
 
 .archive-frame {

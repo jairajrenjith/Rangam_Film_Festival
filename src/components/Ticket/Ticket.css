@@ -11,6 +11,7 @@
 .ticket-brands { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
 .ticket-brand { height: 40px; width: auto; object-fit: contain; }
 .ticket-brand--rangam { height: 46px; }
+.ticket-brand--dhwani { height: 40px; border-radius: 3px; }
 
 .ticket-kicker { font: 12px var(--mono); letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin: 0 0 10px; }
 .ticket-movie { font-size: 44px; letter-spacing: -0.03em; margin: 0 0 26px; line-height: 1; }

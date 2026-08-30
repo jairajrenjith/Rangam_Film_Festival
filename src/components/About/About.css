@@ -1,6 +1,28 @@
-.about { background: var(--paper); color: var(--ink); }
-.about-motif { bottom: -8%; left: -6%; color: rgba(var(--ink-rgb), 0.06); }
-.about-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: clamp(40px, 10vw, 150px); align-items: end; }
-.about-aside { border-left: 2px solid var(--red); padding-left: 25px; font: 13px/1.7 var(--mono); color: var(--muted); }
+/* About now runs the dark "plum" half of the palette — it also takes
+   on the soft screen-blended background art that used to sit behind
+   the Hero, since that treatment reads best against a dark backdrop. */
+.about { position: relative; background: var(--ink); color: var(--paper); }
+
+.about-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.32;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-motif { bottom: -8%; left: -6%; color: rgba(var(--paper-rgb), 0.06); }
+.about-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: clamp(40px, 10vw, 150px); align-items: end; }
+.about-aside { border-left: 2px solid var(--red-bright); padding-left: 25px; font: 13px/1.7 var(--mono); color: var(--paper-dark); }
+
+/* The shared .kicker defaults to plum text (for the light sections) —
+   on this dark plum background that's nearly invisible, so switch it
+   to butter here for real contrast. */
+.about .kicker { color: var(--paper); }
 
 @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }

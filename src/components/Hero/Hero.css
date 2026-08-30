@@ -1,31 +1,21 @@
+/* Hero runs the light "butter" half of the palette — the About section
+   right after it takes the dark "plum" half instead, so the two
+   sections alternate. Depth comes from layered gradients (a warm glow
+   top-right, a cool plum pool bottom-left, over a shifting base tone)
+   rather than flat colour or thin line textures. */
 .hero {
   position: relative;
   display: grid;
   min-height: 100svh;
   padding: 145px var(--pad) 55px;
   overflow: hidden;
-  background: radial-gradient(circle at 87% 18%, rgba(var(--red-rgb), 0.45), transparent 23%), var(--ink);
-}
-.hero::before {
-  content: "";
-  position: absolute; inset: 0;
-  background: repeating-linear-gradient(90deg, transparent 0 9.9%, rgba(var(--paper-rgb), 0.09) 10% 10.16%);
-  mask: linear-gradient(to bottom, #000, transparent 72%);
-  pointer-events: none;
-}
-.hero-motif { top: 8%; right: -6%; color: rgba(var(--paper-rgb), 0.06); }
-
-.hero-art {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.4;
-  mix-blend-mode: screen;
-  pointer-events: none;
-  z-index: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse 55% 45% at 90% 2%, rgba(var(--red-rgb), 0.42), transparent 58%),
+    radial-gradient(ellipse 50% 42% at 8% -6%, rgba(255, 255, 255, 0.35), transparent 55%),
+    radial-gradient(ellipse 65% 55% at 0% 104%, rgba(var(--ink-rgb), 0.3), transparent 62%),
+    radial-gradient(ellipse 55% 50% at 104% 100%, rgba(var(--red-bright-rgb), 0.22), transparent 60%),
+    linear-gradient(160deg, var(--paper) 0%, var(--paper-dark) 78%, var(--paper) 100%);
 }
 
 .hero-inner {
@@ -44,7 +34,7 @@
 .hero-inner.is-ready .hero-line:nth-child(5) { transition-delay: 0.48s; }
 .hero-inner.is-ready .hero-line:nth-child(6) { transition-delay: 0.56s; }
 
-.hero-presents { font: 11px var(--mono); letter-spacing: 0.15em; color: var(--paper-dark); text-transform: uppercase; }
+.hero-presents { font: 11px var(--mono); letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; }
 
 .hero-mark-wrap { display: block; margin: 20px 0 10px; }
 .hero-mark {
@@ -53,9 +43,9 @@
   height: auto;
   margin: 0 auto;
 }
-.mal-title { margin: 30px 0 6px; font: clamp(2rem, 5.4vw, 5rem)/1 var(--malayalam); color: var(--red-bright); }
-.subtitle { font: clamp(1rem, 2.2vw, 1.42rem) var(--mono); letter-spacing: -0.07em; }
-.hero-note { max-width: 495px; margin: 33px 0; color: rgba(var(--paper-rgb), 0.73); font-size: 15px; line-height: 1.65; }
+.mal-title { margin: 30px 0 6px; font: clamp(2rem, 5.4vw, 5rem)/1 var(--malayalam); color: var(--red); }
+.subtitle { font: clamp(1rem, 2.2vw, 1.42rem) var(--mono); letter-spacing: -0.07em; color: var(--ink); }
+.hero-note { max-width: 495px; margin: 33px 0; color: rgba(var(--ink-rgb), 0.75); font-size: 15px; line-height: 1.65; }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
 .button {
@@ -68,16 +58,13 @@
 .button.primary { background: var(--paper); color: var(--ink); }
 .button:hover { transform: translate(-3px, -3px); box-shadow: 5px 5px 0 var(--red-bright); }
 
-.film-number {
-  position: absolute; right: 2vw; bottom: -0.15em;
-  color: transparent;
-  font-size: clamp(13rem, 34vw, 32rem);
-  font-weight: 700; line-height: 0.8; letter-spacing: -0.15em;
-  -webkit-text-stroke: 1px rgba(var(--paper-rgb), 0.15);
-  pointer-events: none;
-}
+/* Hero sits on a light background, so its own buttons need the dark
+   half of the palette instead of the shared defaults above (which are
+   tuned for the dark sections elsewhere, e.g. PassModal/Schedule). */
+.hero .button { border-color: var(--ink); color: var(--ink); }
+.hero .button.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.hero .button:hover { box-shadow: 5px 5px 0 var(--red); }
 
 @media (max-width: 760px) {
   .hero { padding-top: 120px; }
-  .film-number { right: -20px; }
 }
