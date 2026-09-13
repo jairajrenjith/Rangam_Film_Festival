@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from 'react'
+import { Suspense, useEffect, useMemo, useRef } from 'react'
 import * as THREE from 'three'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Environment } from '@react-three/drei'
@@ -145,10 +145,7 @@ function Scene({ pointer }) {
         <Pointer pointer={pointer} />
 
         {spheres.map((sphere, index) => (
-          <Sphere
-            key={index}
-            {...sphere}
-          />
+          <Sphere key={index} {...sphere} />
         ))}
       </Physics>
 
@@ -213,7 +210,9 @@ export default function HeroBalls() {
           powerPreference: 'high-performance'
         }}
       >
-        <Scene pointer={pointer} />
+        <Suspense fallback={null}>
+          <Scene pointer={pointer} />
+        </Suspense>
       </Canvas>
     </div>
   )

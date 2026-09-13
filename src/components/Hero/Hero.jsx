@@ -11,6 +11,7 @@ export default function Hero({ ready }) {
         <h1 id="hero-title" className="hero-mark-wrap hero-line">
           <img className="hero-mark" src={rangamMark} alt="Rangam" />
         </h1>
+        <p className="hero-date-line hero-line">September 22–27</p>
         <p className="mal-title hero-line">സാക്ഷിപകർപ്പുകൾ</p>
         <p className="subtitle hero-line">Whispers of Witness</p>
         <p className="hero-note hero-line">

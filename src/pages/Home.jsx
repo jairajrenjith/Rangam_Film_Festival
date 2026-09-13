@@ -7,6 +7,7 @@ import MarqueeStrip from '../components/MarqueeStrip/MarqueeStrip'
 import About from '../components/About/About'
 import Edition from '../components/Edition/Edition'
 import Schedule from '../components/Schedule/Schedule'
+import Competition from '../components/Competition/Competition'
 import Archive from '../components/Archive/Archive'
 import Footer from '../components/Footer/Footer'
 import RangamBot from '../components/RangamBot/RangamBot'
@@ -36,6 +37,11 @@ export default function Home() {
         <Edition />
         <MarqueeStrip text="Rangam · reserve your seat · limited passes per screening · witness / record / remember · " inverted />
         <Schedule />
+        <MarqueeStrip
+          text="Rangam · open call · your story, your camera, your cut · submit before the deadline · "
+          inverted
+        />
+        <Competition />
         <MarqueeStrip text="Rangam · films return to us · so does the memory of them · cet film society · " />
         <Archive />
       </main>

@@ -10,6 +10,10 @@ const FAQ_FACTS = [
   { q: 'How do I get a pass?', a: "Passes aren't live yet. They'll open on the site's Edition section once the schedule is confirmed — check back soon." },
   { q: 'What happened in previous editions?', a: 'Rangam has run before as more than just screenings — with films and discussions that stayed with people long after the credits. Footage and highlights from past editions are being added to the archive.' },
   { q: 'Who organizes Rangam?', a: 'Rangam is organized by CET Film Society, College of Engineering Trivandrum.' },
+  { q: 'What is the short film competition?', a: "Rangam runs an open short film competition alongside the screenings — original films under 30 minutes, any language (with English subtitles), open to everyone regardless of geography. Documentaries aren't accepted this edition." },
+  { q: 'How do I join the short film competition?', a: 'Registration fee is ₹699, and entries must be submitted through the registration form on the site on or before 17 September 2026. Full rules are in the guidelines PDF linked in the Competition section.' },
+  { q: 'What is the prize for the short film competition?', a: "The competition has a prize pool worth over ₹75,000, with jury awards for Best Short Film, Best Direction, and Best Script." },
+  { q: 'Who do I contact about the short film competition?', a: 'For competition queries, reach Sisira at 9544758104 or Afwan at 9847910308.' },
 ];
 
 export default async function handler(req, res) {

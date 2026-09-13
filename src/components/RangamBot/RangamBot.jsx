@@ -7,6 +7,7 @@ const QUICK_QUESTIONS = [
   "What's this year's theme?",
   'When is it happening?',
   'How do I get a pass?',
+  'How do I join the short film competition?',
 ]
 
 const GREETING = "Ask me anything about Rangam — the theme, dates, passes, past editions. I'll only tell you what's actually confirmed."

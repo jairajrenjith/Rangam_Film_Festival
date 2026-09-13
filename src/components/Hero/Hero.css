@@ -56,6 +56,7 @@
 .hero-inner.is-ready .hero-line:nth-child(4) { transition-delay: 0.4s; }
 .hero-inner.is-ready .hero-line:nth-child(5) { transition-delay: 0.48s; }
 .hero-inner.is-ready .hero-line:nth-child(6) { transition-delay: 0.56s; }
+.hero-inner.is-ready .hero-line:nth-child(7) { transition-delay: 0.64s; }
 
 .hero-presents { font: 11px var(--mono); letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; }
 
@@ -67,8 +68,19 @@
   margin: 0 auto;
 }
 .mal-title { margin: 30px 0 6px; font: clamp(2rem, 5.4vw, 5rem)/1 var(--malayalam); color: var(--red); }
+.hero-date-line { margin: 4px 0 0; font: 20px var(--mono); letter-spacing: 0.12em; color: var(--red); text-transform: uppercase; }
 .subtitle { font: clamp(1rem, 2.2vw, 1.42rem) var(--mono); letter-spacing: -0.07em; color: var(--ink); }
-.hero-note { max-width: 495px; margin: 33px 0; color: rgba(var(--ink-rgb), 0.75); font-size: 15px; line-height: 1.65; }
+.hero-note { max-width: 495px; margin: 5px 0 33px; color: rgba(var(--ink-rgb), 0.75); font-size: 15px; line-height: 1.65; }
+.hero-dates {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  z-index: 4;
+  display: block;
+  width: min(30%, clamp(110px, 13vw, 180px));
+  height: auto;
+  margin: 0;
+}
 .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
 .button {
@@ -90,6 +102,7 @@
 
 @media (max-width: 760px) {
   .hero { padding-top: 120px; }
+  .hero-dates { top: 0; width: min(26%, 110px); }
 }
 
 @media (max-width: 768px) {
